@@ -68,7 +68,7 @@ const handleSelect = (path) => {
 }
 const menus = [
     {
-        'name': '仪表盘',
+        'name': '后台管理',
         'icon': 'Monitor',
         'path': '/admin/index'
     },
@@ -91,6 +91,11 @@ const menus = [
         'name': '博客设置',
         'icon': 'Setting',
         'path': '/admin/blog/setting',
+    },
+    {
+        'name': 'Loading',
+        'icon': 'Loading',
+        'path': '/admin/blog/loading',
     },
 ]
 

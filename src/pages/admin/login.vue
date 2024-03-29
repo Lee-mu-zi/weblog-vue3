@@ -6,8 +6,8 @@
             <!-- 指定为 flex 布局，并设置为屏幕垂直水平居中，高度为 100% -->
             <div
                 class="flex justify-center items-center h-full flex-col animate__animated animate__bounceInLeft animate__fast">
-                <h2 class="font-bold text-4xl mb-7 text-white">Weblog 博客登录</h2>
-                <p class="text-white">一款由 Spring Boot + Mybaits Plus + Vue 3.2 + Vite 4 开发的前后端分离博客。</p>
+                <!-- <h2 class="font-bold text-4xl mb-7 text-white">Weblog 博客登录</h2> -->
+                <p class="text-white" style="font-size: large; color:aliceblue;">火车是朝前开的 去哪儿并不重要 关键在于窗外的风景</p>
                 <!-- 指定图片宽度为父级元素的 1/2 -->
                 <img src="@/assets/developer.png" class="w-1/2">
             </div>
@@ -17,9 +17,12 @@
             <div
                 class="flex justify-center items-center h-full flex-col animate__animated animate__bounceInRight animate__fast">
                 <!-- 大标题，设置字体粗细、大小、下边距 -->
-                <h1 class="font-bold text-4xl mb-5">欢迎回来</h1>
+                <!-- <h1 class="font-bold text-4xl mb-5">欢迎回来</h1> -->
                 <!-- 设置 flex 布局，内容垂直水平居中，文字颜色，以及子内容水平方向 x 轴间距 -->
-                <div class="flex items-center justify-center mb-7 text-gray-400 space-x-2">
+                <div>
+                    <img src="@/assets/logo.svg" style="height: 5em;">
+                </div>
+                <div class=" flex items-center justify-center mb-7 text-gray-400 space-x-2" style="font-size: x-large;">
                     <!-- 左边横线，高度为 1px, 宽度为 16，背景色设置 -->
                     <span class="h-[1px] w-16 bg-gray-200"></span>
                     <span>账号密码登录</span>
@@ -30,7 +33,8 @@
                 <el-form class="w-5/6 md:w-2/5" ref="formRef" :rules="rules" :model="form">
                     <el-form-item prop="username">
                         <!-- 输入框组件 -->
-                        <el-input size="large" v-model="form.username" placeholder="请输入用户名" :prefix-icon="User" clearable />
+                        <el-input size="large" v-model="form.username" placeholder="请输入用户名" :prefix-icon="User"
+                            clearable />
                     </el-form-item>
                     <el-form-item prop="password">
                         <!-- 密码框组件 -->
@@ -39,7 +43,8 @@
                     </el-form-item>
                     <el-form-item>
                         <!-- 登录按钮，宽度设置为 100% -->
-                        <el-button class="w-full mt-2" size="large" :loading="loading" type="primary" @click="onSubmit">登录</el-button>
+                        <el-button class="w-full mt-2" size="large" :loading="loading" type="primary"
+                            @click="onSubmit">登录</el-button>
                     </el-form-item>
                 </el-form>
             </div>
@@ -53,7 +58,7 @@ import { User, Lock } from '@element-plus/icons-vue'
 import { login } from '@/api/admin/user'
 import { ref, reactive, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import { showMessage} from '@/composables/util'
+import { showMessage } from '@/composables/util'
 import { setToken } from '@/composables/auth'
 
 // 定义响应式的表单对象
@@ -61,6 +66,8 @@ const form = reactive({
     username: '',
     password: ''
 })
+
+
 
 const router = useRouter()
 // 登录按钮加载
@@ -118,10 +125,10 @@ const onSubmit = () => {
                 showMessage(message, 'error')
             }
         })
-        .finally(() => {
-            // 结束加载
-            loading.value = false
-        })
+            .finally(() => {
+                // 结束加载
+                loading.value = false
+            })
     })
 }
 

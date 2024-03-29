@@ -1,5 +1,6 @@
 import Index from '@/pages/frontend/index.vue'
 import Login from '@/pages/admin/login.vue'
+import Movie from '@/pages/admin/movie.vue'
 import AdminIndex from '@/pages/admin/index.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Admin from '@/layouts/admin/admin.vue'
@@ -7,36 +8,30 @@ import AdminArticleList from '@/pages/admin/article-list.vue'
 import AdminCategoryList from '@/pages/admin/category-list.vue'
 import AdminTagList from '@/pages/admin/tag-list.vue'
 import AdminBlogSetting from '@/pages/admin/blog-setting.vue'
+import Loading from '@/pages/admin/loading.vue'
 // 统一在这里声明所有路由
 const routes = [
     {
         path: '/', // 路由地址，首页
         component: Index, // 对应组件
         meta: { // meta 信息
-            title: 'Weblog 首页' // 页面标题
-        }
-    },
-    {
-        path: '/login', // 登录页
-        component: Login,
-        meta: {
-            title: 'Weblog 登录页'
-        }
-    },
-    {
-        path: "/admin", // 后台首页
-        component: Admin,
-        // 使用到 admin.vue 布局的，都需要放置在其子路由下面
-        children: [
-            {
-                path: "/admin/index",
-                component: AdminIndex,
-                meta: {
-                    title: 'Admin 后台首页'
-                }
-            }
-        ]
+            title: '首页' // 页面标题
 
+        }
+    },
+    {
+        path: '/login', // 登录页路径
+        component: Login, //对应组件
+        meta: {
+            title: '登录' //页面标题
+        }
+    },
+    {
+        path: '/movie',
+        component: Movie,
+        meta: {
+            title: '在线影城'
+        }
     },
     {
         path: "/admin", // 后台首页
@@ -47,7 +42,7 @@ const routes = [
                 path: "/admin/index",
                 component: AdminIndex,
                 meta: {
-                    title: '仪表盘'
+                    title: '后台管理'
                 }
             },
             {
@@ -78,9 +73,16 @@ const routes = [
                     title: '博客设置'
                 }
             },
+            {
+                path: "/admin/blog/loading",
+                component: Loading,
+                meta: {
+                    title: 'loading'
+                }
+            },
         ]
+    },
 
-    }
 ]
 
 // 创建路由

@@ -1,3 +1,4 @@
+// 主js文件
 import '@/assets/main.css'
 import 'animate.css';
 import 'nprogress/nprogress.css'

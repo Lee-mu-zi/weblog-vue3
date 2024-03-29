@@ -3,11 +3,12 @@
 
         <div class=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">李记茶馆</span>
+                <img src="@/assets/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">李木子的博客</span>
             </a>
             <div class="flex items-center md:order-2">
-                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                <!-- 该按钮为移动端搜索按钮 与移动端折叠菜单按钮功能相同 暂时注掉 后期进行功能替换-->
+                <!-- <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                     aria-expanded="false"
                     class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -16,7 +17,8 @@
                             d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                     </svg>
                     <span class="sr-only">Search</span>
-                </button>
+                </button> -->
+                <!-- 搜索框  后期进行es进行快速搜索处理-->
                 <div class="relative hidden mr-2 md:block">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -32,7 +34,15 @@
                 </div>
 
                 <!-- 登录 -->
-                <div class="text-gray-900 ml-1 mr-1 hover:text-blue-700" @click="$router.push('/login')">登录</div>
+                <el-tooltip class="box-item" effect="dark" content="登录" placement="bottom">
+                    <div class="text-gray-900 ml-1 mr-1 hover:text-blue-700" @click="$router.push('/login')"
+                        style="font-size: x-large; height: 1.25em;">
+                        <el-icon>
+                            <img src="@/assets/user.svg" alt="">
+                        </el-icon>
+                    </div>
+                </el-tooltip>
+
 
                 <button data-collapse-toggle="navbar-search" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -46,6 +56,7 @@
                 </button>
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <!-- 该div为移动端菜单折叠栏搜索框 -->
                 <div class="relative mt-3 md:hidden">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
