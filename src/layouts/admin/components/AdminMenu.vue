@@ -1,9 +1,10 @@
 <template>
-    <div class="bg-slate-800 h-screen text-white menu-container" :style="{ width: menuStore.menuWidth }">
+    <!-- transition-all添加 Tailwind CSS 提供的动画  duration-1000设置折叠栏折叠速度 -->
+    <div class="bg-slate-800 h-screen text-white menu-container transition-all duration-200"
+        :style="{ width: menuStore.menuWidth }">
         <!-- 顶部 Logo, 指定高度为 64px, 和右边的 Header 头保持一样高 -->
         <div class="flex items-center justify-center h-[64px]">
-            <img src="@/assets/weblog-logo-new.svg" class="h-[60px]">
-
+            <img src="@/assets/weblog-logo-new.svg" class="h-[60px]" @click="$router.push('/')">
             <!-- 通过下面的语句更换折叠或者展开时的管理界面的logo 暂时无用 注释 -->
             <!-- <img src=" @/assets/weblog-logo-new.svg" class="h-[60px]" v-if="menuStore.menuWidth == '250px'"> -->
             <!-- <img src="@/assets/logo.svg" class="h-[60px]" v-else> -->

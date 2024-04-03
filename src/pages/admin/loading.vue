@@ -1,3 +1,11 @@
 <template>
-    <h1>该页面暂时未启用</h1>
+    <h1>111{{ userStore.userInfo.avatar }}</h1>
 </template>
+
+<script setup>
+import { useUserStore } from '@/stores/user.js'
+
+// 引入了用户 Store
+const userStore = useUserStore()
+
+</script>
