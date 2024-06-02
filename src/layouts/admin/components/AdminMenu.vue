@@ -1,6 +1,6 @@
 <template>
     <!-- transition-all添加 Tailwind CSS 提供的动画  duration-1000设置折叠栏折叠速度 -->
-    <div class="bg-slate-800 h-screen text-white menu-container transition-all duration-200"
+    <div class="fixed overflow-y-auto bg-slate-800 h-screen text-white menu-container transition-all duration-200"
         :style="{ width: menuStore.menuWidth }">
         <!-- 顶部 Logo, 指定高度为 64px, 和右边的 Header 头保持一样高 -->
         <div class="flex items-center justify-center h-[64px]">

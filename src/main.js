@@ -13,6 +13,9 @@ import '@/permission'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // 引入全局状态管理 Pinia
 import pinia from '@/stores/index'
+// 图片点击放大
+import 'viewerjs/dist/viewer.css'
+import VueViewer from 'v-viewer'
 
 
 const app = createApp(App)
@@ -20,11 +23,14 @@ const app = createApp(App)
 // const pinia = createPinia()
 // pinia.use(piniaPluginPersistedstate)
 
+app.use(VueViewer)
+
 // 应用路由
 app.use(router)
 app.mount('#app')
 // 应用 Pinia
 app.use(pinia)
+
 
 
 

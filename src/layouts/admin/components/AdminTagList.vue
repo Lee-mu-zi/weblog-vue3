@@ -34,7 +34,6 @@ import { ref } from 'vue'
 import { useMenuStore } from '@/stores/menu'
 import { useRoute, useRouter, onBeforeRouteUpdate } from 'vue-router'
 import { setTabList, getTabList } from '@/composables/cookie'
-
 import { useTabList } from '@/composables/useTagList.js'
 
 const { menuStore, activeTab, tabList, tabChange, removeTab, handleCloseTab } = useTabList()
