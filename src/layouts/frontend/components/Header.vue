@@ -4,7 +4,8 @@
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <!-- 博客 LOGO 、博客名称 -->
                 <a href="/" class="flex items-center">
-                    <img :src="blogSettingsStore.blogSettings.logo" class="h-8 mr-3 rounded-full" alt="Flowbite Logo" />
+                    <img :src="blogSettingsStore.blogSettings.logo" class="h-8 mr-3 rounded-full" alt="Logo" />
+                    <!-- <img :src="logoPath" class="h-8 mr-3 rounded-full" alt="Logo" /> -->
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{
                         blogSettingsStore.blogSettings.name }}</span>
                 </a>
@@ -35,7 +36,17 @@
 
                     <!-- 登录 -->
                     <div class="text-gray-900 ml-1 mr-1 hover:text-blue-700" v-if="!isLogined"
-                        @click="$router.push('/login')">登录</div>
+                        @click="$router.push('/login')">
+                        <el-tooltip class="box-item" effect="dark" content="登录" placement="bottom">
+                            <svg t="1717491808336" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" p-id="6143" width="25" height="25">
+                                <path
+                                    d="M696.498 536.917c61.909-54.848 101.407-138.143 101.407-231.467 0-165.465-124.226-299.413-277.31-299.413-153.185 0-277.412 133.948-277.412 299.31 0 82.99 31.313 158.2 81.965 212.332 6.242 6.038 182.657 169.251 371.35 19.238m186.033 207.01l-150.73-137.324c-56.587 46.354-216.936 144.18-438.58-3.48-66.82 51.37-245.076 198.824-225.326 298.288 0 0 3.479 103.76 192.07 108.775 0 0 561.988 41.545 655.413-55.258-0.102 0 102.022-65.694-32.847-211"
+                                    fill="#8290A3" p-id="6144"></path>
+                            </svg>
+                        </el-tooltip>
+                    </div>
+
                     <!-- 已经登录，展示用户头像 -->
                     <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" v-else
                         class="text-white ml-2 mr-2 md:mr-0 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -194,6 +205,9 @@ onMounted(() => {
 
 // 引入博客设置信息 store
 const blogSettingsStore = useBlogSettingsStore()
+
+
+
 
 // 是否登录，通过 userStore 中的 userInfo 对象是否有数据来判断
 const userStore = useUserStore()

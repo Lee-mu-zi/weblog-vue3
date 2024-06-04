@@ -57,8 +57,9 @@
                 <el-dropdown class="flex items-center justify-center">
                     <span class="el-dropdown-link flex items-center justify-center text-gray-700 text-xs">
                         <!-- 头像 Avatar -->
-                        <el-avatar class="mr-2" :size="25"
-                            src="https://iconfont.alicdn.com/p/illus/preview_image/1SAIt26l6ecK/1617a7b2-ddc8-4a87-9353-c7a53d84e37e.png" />
+                        <!-- <el-avatar class="mr-2" :size="25"
+                            src="https://iconfont.alicdn.com/p/illus/preview_image/1SAIt26l6ecK/1617a7b2-ddc8-4a87-9353-c7a53d84e37e.png" /> -->
+                        <el-avatar class="mr-2" :size="25" :src="blogSettingsStore.blogSettings.avatar" />
                         {{ userStore.userInfo.username }}
                         <el-icon class="el-icon--right">
                             <arrow-down />
@@ -136,6 +137,7 @@ import { showModel, showMessage } from '@/composables/util.js'
 import { ref, reactive, watch } from 'vue'
 import { updateAdminPassword } from '@/api/admin/user.js'
 import FormDialog from '@/components/FormDialog.vue'
+import { useBlogSettingsStore } from '@/stores/blogsettings'
 
 // 引入了用户 Store
 const userStore = useUserStore()
@@ -292,7 +294,8 @@ const userLogout = () => {
 }
 
 
-
+// 引入博客设置信息 store
+const blogSettingsStore = useBlogSettingsStore()
 
 
 </script>
