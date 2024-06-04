@@ -4,6 +4,26 @@
     <main class="container max-w-screen-xl mx-auto p-4">
         <!-- grid 表格布局，分为 4 列 -->
         <div class="grid grid-cols-4 gap-7">
+
+            <!-- 右边侧边栏，占用一列 -->
+            <!-- <aside class="col-span-4 bg-green-500 md:col-span-1"> -->
+            <aside class="col-span-4 md:col-span-1">
+
+                <div class="top-[5.5rem]">
+
+                    <!-- 博主信息 -->
+                    <UserInfoCard></UserInfoCard>
+
+
+                    <!-- 分类 -->
+                    <CategoryListCard></CategoryListCard>
+
+                    <!-- 标签 -->
+                    <TagListCard></TagListCard>
+                </div>
+            </aside>
+
+
             <!-- 左边栏，占用 3 列 -->
             <div class="col-span-4 md:col-span-3 mb-3">
                 <!-- 文章列表，grid 表格布局，分为 3 列 -->
@@ -103,23 +123,7 @@
             </div>
 
 
-            <!-- 右边侧边栏，占用一列 -->
-            <!-- <aside class="col-span-4 bg-green-500 md:col-span-1"> -->
-            <aside class="col-span-4 md:col-span-1">
 
-                <div class="top-[5.5rem]">
-
-                    <!-- 博主信息 -->
-                    <UserInfoCard></UserInfoCard>
-
-
-                    <!-- 分类 -->
-                    <CategoryListCard></CategoryListCard>
-
-                    <!-- 标签 -->
-                    <TagListCard></TagListCard>
-                </div>
-            </aside>
         </div>
 
     </main>
