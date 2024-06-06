@@ -143,7 +143,9 @@ import { useRoute, useRouter } from 'vue-router'
 import { ref, watch, onMounted } from 'vue'
 import hljs from 'highlight.js'
 // 代码高亮样式
-import 'highlight.js/styles/tokyo-night-dark.css'
+//import 'highlight.js/styles/tokyo-night-dark.css'
+//import 'highlight.js/styles/color-brewer.css'
+import 'highlight.js/styles/idea.css'
 import ScrollToTopButton from '@/layouts/frontend/components/ScrollToTopButton.vue'
 import Toc from '@/layouts/frontend/components/Toc.vue'
 
