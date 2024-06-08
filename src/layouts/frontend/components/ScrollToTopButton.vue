@@ -2,7 +2,7 @@
     <!-- fixed 固定位置，并通过 bottom-xx right-xx 设置在右下角 -->
     <el-tooltip class="item" effect="dark" content="回到顶部" placement="top">
         <div style="border-radius: 50%;" v-show="showScrollToTopBtn" @click="scrollToTop"
-            class="border cursor-pointer fixed bottom-2 right-2 md:bottom-10 md:right-10 inline p-3 bg-white hover:bg-gray-100 rounded">
+            class="z-50 border cursor-pointer fixed bottom-2 right-2 md:bottom-10 md:right-10 inline p-3 bg-white hover:bg-gray-100 rounded">
             <svg t="1717148426983" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 p-id="11607" width="20" height="20">
                 <path
