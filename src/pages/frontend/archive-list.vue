@@ -5,9 +5,25 @@
     <main class="container max-w-screen-xl mx-auto p-4 px-6">
         <!-- grid 表格布局，分为 4 列 -->
         <div class="grid grid-cols-4 gap-7">
+
+            <!-- 右边侧边栏，占用一列 -->
+            <aside class="col-span-4 md:col-span-1">
+
+                <div class=" top-[5.5rem]">
+                    <!-- 博主信息 -->
+                    <UserInfoCard></UserInfoCard>
+
+                    <!-- 分类 -->
+                    <CategoryListCard></CategoryListCard>
+
+                    <!-- 标签 -->
+                    <TagListCard></TagListCard>
+                </div>
+
+            </aside>
+
             <!-- 左边栏，占用 3 列 -->
             <div class="col-span-4 md:col-span-3 mb-3">
-
                 <!-- 归档列表 -->
                 <div v-for="(archive, index) in archives" :key="index"
                     class="p-5 mb-4 border border-gray-200 rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700">
@@ -79,21 +95,7 @@
                 </nav>
             </div>
 
-            <!-- 右边侧边栏，占用一列 -->
-            <aside class="col-span-4 md:col-span-1">
 
-                <div class=" top-[5.5rem]">
-                    <!-- 博主信息 -->
-                    <UserInfoCard></UserInfoCard>
-
-                    <!-- 分类 -->
-                    <CategoryListCard></CategoryListCard>
-
-                    <!-- 标签 -->
-                    <TagListCard></TagListCard>
-                </div>
-
-            </aside>
         </div>
 
     </main>

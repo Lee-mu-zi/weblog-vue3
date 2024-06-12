@@ -6,7 +6,7 @@
 <script setup>
 import * as echarts from 'echarts'
 import { watch } from 'vue'
-import { format, subMonths } from 'date-fns'
+import { addDays, addMonths, format, subMonths, subYears } from 'date-fns'
 
 // 对外暴露的属性值
 const props = defineProps({
@@ -18,12 +18,19 @@ const props = defineProps({
 
 // 当前日期
 const currentDate = new Date();
+
+const oneYearAgo = subYears(currentDate, 1)
+
+// const oneDayLater = addDays(currentDate, 1)
+
 // 半年前
-const sixMonthsAgo = subMonths(currentDate, 6)
+// const sixMonthsAgo = subMonths(currentDate, 12)
+
+// const sixMonthsLater = addMonths(currentDate, 6)
 
 // 格式化后的开始、结束日期
-const startDate = format(sixMonthsAgo, 'yyyy-MM-dd')
-const endDate = format(currentDate, 'yyyy-MM-dd')
+const startDate = format(oneYearAgo, 'yyyy-MM-dd')
+// const endDate = format(sixMonthsLater, 'yyyy-MM-dd')
 
 // 日历热点数据
 const myData = []
@@ -40,17 +47,35 @@ function initCalendar() {
     }
 
     var chartDom = document.getElementById('calendar');
-    var myChart = echarts.init(chartDom);
+    var myChart = echarts.init(chartDom, null, { width: 1200 });
     var option;
 
     option = {
         visualMap: {
             show: false,
             min: 0,
-            max: 10
+            max: 10,
+        },
+        tooltip: {
+            formatter: '{c0}次提交',
+            backgroundColor: 'rgba(50,50,50,0.7)',
+            textStyle: {
+                color: '#fff',
+            }
         },
         calendar: { // 日历显示的范围：开始日期 - 结束日期
-            range: [startDate, endDate],
+            right: 30,
+            cellSize: ['auto', 20],
+            range: [startDate, currentDate],
+            splitLine: {
+                show: false,
+            },
+            itemStyle: {
+                color: '#000000',
+                borderWidth: 3,
+                borderColor: '#ffffff',
+                borderJoin: 'round'
+            },
         },
         series: {
             type: 'heatmap',
@@ -62,7 +87,8 @@ function initCalendar() {
             '#40c463',
             '#30a14e',
             '#216e39',
-        ]
+        ],
+
     };
 
     option && myChart.setOption(option);

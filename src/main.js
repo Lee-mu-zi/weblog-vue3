@@ -16,6 +16,8 @@ import pinia from '@/stores/index'
 // 图片点击放大
 import 'viewerjs/dist/viewer.css'
 import VueViewer from 'v-viewer'
+import TeaDesign from 'tea-design'
+import 'tea-design/dist/style.css'
 
 
 const app = createApp(App)
@@ -24,6 +26,9 @@ const app = createApp(App)
 // pinia.use(piniaPluginPersistedstate)
 
 app.use(VueViewer)
+
+//导入Tea Design
+app.use(TeaDesign)
 
 // 应用路由
 app.use(router)

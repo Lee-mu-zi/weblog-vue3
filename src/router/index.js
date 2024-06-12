@@ -17,6 +17,8 @@ import TagArticleList from '@/pages/frontend/tag-article-list.vue'
 import ArticleDetail from '@/pages/frontend/article-detail.vue'
 import NotFound from '@/pages/frontend/404.vue'
 import AdminWikiList from '@/pages/admin/wiki-list.vue'
+import WikiList from '@/pages/frontend/wiki-list.vue'
+import WikiDetail from '@/pages/frontend/wiki-detail.vue'
 
 // 统一在这里声明所有路由
 const routes = [
@@ -149,6 +151,20 @@ const routes = [
             title: '404 页'
         }
     },
+    {
+        path: '/wiki/list', // 知识库
+        component: WikiList,
+        meta: {
+            title: '知识库'
+        }
+    },
+    {
+        path: '/wiki/:wikiId', // 知识库详情页
+        component: WikiDetail,
+        meta: {
+            title: '知识库详情'
+        }
+    },
 
 
 ]
@@ -159,6 +175,10 @@ const router = createRouter({
     history: createWebHashHistory(),
     // routes: routes 的缩写
     routes,
+    // 每次切换路由后，页面滚动到顶部
+    scrollBehavior() {
+        return { top: 0 }
+    }
 })
 
 // 暴露出去
