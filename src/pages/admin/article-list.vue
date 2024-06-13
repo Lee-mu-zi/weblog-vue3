@@ -26,7 +26,7 @@
                     <el-icon class="mr-1">
                         <EditPen />
                     </el-icon>
-                    写文章</el-button>
+                    添加文章</el-button>
             </div>
             <!-- 分页列表 -->
             <el-table :data="tableData" border stripe style="width: 100%" v-loading="tableLoading">
@@ -83,10 +83,10 @@
                     <!-- 指定 flex 布局， 高度为 10， 背景色为白色 -->
                     <div class="flex h-10 bg-white">
                         <!-- 字体加粗 -->
-                        <h4 class="font-bold">写文章</h4>
+                        <h4 class="font-bold">添加文章</h4>
                         <!-- 靠右对齐 -->
                         <div class="ml-auto flex">
-                            <el-button @click="isArticlePublishEditorShow = false">取消</el-button>
+                            <el-button @click="isArticlePublishEditorShow = false; handleRefresh()">取消</el-button>
                             <el-button type="primary" @click="publishArticleSubmit">
                                 <el-icon class="mr-1">
                                     <Promotion />
@@ -223,6 +223,7 @@ import { useRouter } from 'vue-router'
 import { Check, Close } from '@element-plus/icons-vue'
 import { updateArticleIsTop } from '@/api/admin/article'
 
+const handleRefresh = () => location.reload()
 
 const router = useRouter()
 
