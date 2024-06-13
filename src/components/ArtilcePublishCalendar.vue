@@ -64,18 +64,14 @@ function initCalendar() {
             }
         },
         calendar: { // 日历显示的范围：开始日期 - 结束日期
-            right: 30,
             cellSize: ['auto', 20],
             range: [startDate, currentDate],
             splitLine: {
                 show: false,
             },
             itemStyle: {
-
                 borderWidth: 5,
                 borderColor: '#ffffff',
-                borderCap: 'round',
-                borderJoin: 'round',
             },
         },
         series: {
