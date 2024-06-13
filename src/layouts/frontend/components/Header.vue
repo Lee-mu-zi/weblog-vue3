@@ -8,7 +8,8 @@
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{
                         blogSettingsStore.blogSettings.name }}</span>
                 </a>
-                <div class="flex items-center md:order-2">
+
+                <div>
                     <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                         aria-expanded="false"
                         class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
@@ -30,6 +31,10 @@
                         <span class="mr-3">搜索文章 ...</span>
                         <span class="px-2 py-[1px] flex-none text-xs border text-gray-400 rounded">Ctrl K</span>
                     </button>
+                </div>
+
+                <div class="flex items-center md:order-2">
+
 
                     <!-- 登录 -->
                     <div class="text-gray-900 ml-1 mr-1 hover:text-blue-700" v-if="!isLogined"
@@ -89,6 +94,7 @@
                         </svg>
                     </button>
                 </div>
+
                 <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
 
                     <!-- 移动端搜索框 -->
@@ -134,6 +140,7 @@
                                 :class="[currPath == '/wiki/list' ? 'text-sky-600 md:border-b-2 md:border-sky-600 dark:text-sky-500 dark:md:border-sky-600' : 'text-gray-900 dark:text-white']"
                                 class="block py-2 pl-3 pr-4 rounded md:rounded-none hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-600 md:p-0 md:dark:hover:text-sky-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">知识库</a>
                         </li>
+
                     </ul>
                 </div>
             </div>

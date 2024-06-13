@@ -71,10 +71,11 @@ function initCalendar() {
                 show: false,
             },
             itemStyle: {
-                color: '#000000',
-                borderWidth: 3,
+
+                borderWidth: 5,
                 borderColor: '#ffffff',
-                borderJoin: 'round'
+                borderCap: 'round',
+                borderJoin: 'round',
             },
         },
         series: {
@@ -82,12 +83,19 @@ function initCalendar() {
             coordinateSystem: 'calendar',
             data: myData
         },
-        gradientColor: [ // 自定义热点颜色，参考了 GitHub 代码提交的颜色
-            '#fff',
+        // gradientColor: [ // 自定义热点颜色，参考了 GitHub 代码提交的颜色
+        //     '#fff',
+        //     '#40c463',
+        //     '#30a14e',
+        //     '#216e39',
+        // ],
+        gradientColor: [
+            '#ebedf0',
+            '#9be9a8',
             '#40c463',
             '#30a14e',
             '#216e39',
-        ],
+        ]
 
     };
 
