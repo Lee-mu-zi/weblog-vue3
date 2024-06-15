@@ -196,6 +196,7 @@ const formDialogRef = ref(null)
 // 新增分类按钮点击事件
 const addCategoryBtnClick = () => {
     formDialogRef.value.open()
+    console.log('打开成功')
 }
 // 表单引用
 const formRef = ref(null)

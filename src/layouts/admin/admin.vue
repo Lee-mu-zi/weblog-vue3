@@ -2,40 +2,48 @@
     <!-- 外层容器 -->
     <el-container>
 
-        <!-- 左边侧边栏 -->
-        <el-aside :width='menuStore.menuWidth' class="transition-all duration-200">
-            <AdminMenu></AdminMenu>
-        </el-aside>
+        <!-- 顶栏容器 -->
+        <el-header height="100px">
+            <AdminHeader></AdminHeader>
+        </el-header>
 
         <!-- 右边主内容区域 -->
         <el-container>
-            <!-- 顶栏容器 -->
-            <el-header>
-                <AdminHeader></AdminHeader>
-            </el-header>
 
-            <el-main>
-                <!-- 标签导航栏 -->
-                <AdminTagList></AdminTagList>
+            <!-- 左边侧边栏 -->
+            <el-aside :width='menuStore.menuWidth' class="transition-all duration-200">
 
-                <!-- 主内容（根据路由动态展示不同页面） -->
-                <router-view v-slot="{ Component }">
-                    <Transition name="fade">
-                        <!-- max 指定最多缓存 10 个组件 -->
-                        <KeepAlive :max="10">
-                            <component :is="Component"></component>
-                        </KeepAlive>
-                    </Transition>
+                <AdminMenu></AdminMenu>
 
-                </router-view>
-            </el-main>
+            </el-aside>
 
-            <!-- 底栏容器 -->
-            <el-footer>
-                <AdminFooter></AdminFooter>
-            </el-footer>
+
+            <el-container>
+                <el-main>
+                    <!-- 标签导航栏 -->
+                    <AdminTagList></AdminTagList>
+
+                    <!-- 主内容（根据路由动态展示不同页面） -->
+                    <router-view v-slot="{ Component }">
+                        <Transition name="fade">
+                            <!-- max 指定最多缓存 10 个组件 -->
+                            <KeepAlive :max="10">
+                                <component :is="Component"></component>
+                            </KeepAlive>
+                        </Transition>
+
+                    </router-view>
+                </el-main>
+
+                <!-- 底栏容器 -->
+                <el-footer>
+                    <AdminFooter></AdminFooter>
+                </el-footer>
+            </el-container>
         </el-container>
     </el-container>
+
+
 </template>
 
 <script setup>

@@ -2,20 +2,28 @@
     <!-- 固钉组件，通过设置 offset 属性来改变吸顶距离，默认值为 0。 -->
     <el-affix :offset="0">
         <!-- 设置背景色为白色、高度为 64px，padding-right 为 4， border-bottom 为 slate 200 -->
-        <div class="bg-white h-[64px] flex pr-4 border-b border-slate-100">
+        <div class="bg-white h-[100px] flex pr-4 border-b border-slate-100">
+
+            <!-- 顶部 Logo -->
+            <div class="flex items-center justify-center" style="margin-left: 3em;">
+                <img src="@/assets/logo.svg" class="h-[100px]" @click="$router.push('/')">
+            </div>
+
             <!-- 左边栏收缩、展开 -->
-            <div class="w-[42px] h-[64px] cursor-pointer flex items-center justify-center text-gray-700 hover:bg-gray-200"
+            <!-- <div class="w-[42px] h-[64px] cursor-pointer flex items-center justify-center text-gray-700 hover:bg-gray-200"
                 @click="handleMenuWidth">
                 <el-icon>
                     <Fold v-if="menuStore.menuWidth == '250px'" />
                     <Expand v-else />
                 </el-icon>
-            </div>
+            </div> -->
+
+
             <!-- 右边容器，通过 ml-auto 让其在父容器的右边 -->
             <div class=" ml-auto flex">
                 <!-- 点击刷新页面 -->
                 <el-tooltip class="box-item" effect="dark" content="刷新" placement="bottom">
-                    <div class="w-[42px] h-[64px] cursor-pointer flex items-center justify-center text-gray-700 hover:bg-gray-200"
+                    <div class="w-[42px] h-[100px] cursor-pointer flex items-center justify-center text-gray-700 hover:bg-gray-200"
                         @click="handleRefresh">
                         <el-icon>
                             <Refresh />
@@ -24,7 +32,7 @@
                 </el-tooltip>
                 <!-- 点击跳转前台首页 -->
                 <el-tooltip class="box-item" effect="dark" content="跳转前台" placement="bottom">
-                    <div class="w-[42px] h-[64px] cursor-pointer flex items-center justify-center text-gray-700 hover:bg-gray-200"
+                    <div class="w-[42px] h-[100px] cursor-pointer flex items-center justify-center text-gray-700 hover:bg-gray-200"
                         @click="router.push('/')">
                         <el-icon>
                             <Monitor />
@@ -34,7 +42,7 @@
 
                 <!-- 点击全屏展示 -->
                 <el-tooltip class="box-item" effect="dark" content="全屏" placement="bottom" v-if="!isFullscreen">
-                    <div class="w-[42px] h-[64px] cursor-pointer flex items-center justify-center text-gray-700 mr-2 hover:bg-gray-200"
+                    <div class="w-[42px] h-[100px] cursor-pointer flex items-center justify-center text-gray-700 mr-2 hover:bg-gray-200"
                         @click="toggle">
                         <el-icon>
                             <FullScreen />

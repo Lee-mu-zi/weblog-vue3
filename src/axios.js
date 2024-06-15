@@ -54,6 +54,10 @@ instance.interceptors.response.use(function (response) {
 
     return Promise.reject(error)
 })
+
+
+
+
 // 暴露出去
 export default instance;
 
