@@ -24,7 +24,7 @@
                     <el-icon class="mr-1">
                         <Plus />
                     </el-icon>
-                    新增</el-button>
+                    新建分类</el-button>
             </div>
 
 
@@ -107,9 +107,6 @@ const current = ref(1)
 const total = ref(0)
 // 每页显示的数据量，给了个默认值 10
 const size = ref(10)
-
-
-
 
 // 查询条件：开始结束时间
 const startDate = reactive({})
@@ -213,7 +210,7 @@ const rules = {
             message: '分类名称不能为空',
             trigger: 'blur',
         },
-        { min: 1, max: 20, message: '分类名称字数要求大于 1 个字符，小于 20 个字符', trigger: 'blur' },
+        { min: 1, max: 40, message: '分类名称字数要求大于 1 个字符，小于 20 个字符', trigger: 'blur' },
     ]
 }
 
@@ -236,7 +233,8 @@ const onSubmit = () => {
                 // 隐藏对话框
                 formDialogRef.value.close()
                 // 重新请求分页接口，渲染数据
-                getTableData()
+                // getTableData()
+                location.reload()
             } else {
                 // 获取服务端返回的错误消息
                 let message = res.message
@@ -255,7 +253,8 @@ const deleteCategorySubmit = (row) => {
             if (res.success == true) {
                 showMessage('删除成功')
                 // 重新请求分页接口，渲染数据
-                getTableData()
+                // getTableData()
+                location.reload()
             } else {
                 // 获取服务端返回的错误消息
                 let message = res.message

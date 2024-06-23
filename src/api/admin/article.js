@@ -29,3 +29,8 @@ export function updateArticle(data) {
 export function updateArticleIsTop(data) {
     return axios.post("/admin/article/isTop/update", data)
 }
+
+// 根据分类查询文章
+export function getArticlesByCategory(data) {
+    return axios.post("/admin/article/getArticlesByCategory", data)
+}

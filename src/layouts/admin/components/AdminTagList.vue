@@ -1,6 +1,6 @@
 <template>
     <!-- 左边：标签导航栏 -->
-    <div class="fixed top-[100px] h-[44px] px-2 right-0 z-50 flex items-center bg-white transition-all duration-300 shadow"
+    <div class="full-width fixed top-[100px] h-[44px] px-2 right-0 z-50 flex items-center bg-white transition-all duration-300 shadow"
         :style="{ left: menuStore.menuWidth }">
         <el-tabs v-model="activeTab" type="card" class="demo-tabs" @tab-remove="removeTab" @tab-change="tabChange"
             style="min-width: 10px;">
@@ -10,7 +10,7 @@
         </el-tabs>
 
         <!-- 右侧下拉菜单 -->
-        <span class="ml-auto flex items-center justify-center h-[32px] w-[32px]">
+        <span style="white-space: nowrap;" class="ml-auto flex items-center justify-center h-[32px] w-[32px]">
             <el-dropdown @command="handleCloseTab">
                 <span class="el-dropdown-link">
                     <el-icon>
@@ -25,8 +25,10 @@
                 </template>
             </el-dropdown>
         </span>
+
     </div>
     <div class="h-[44px]"></div>
+
 </template>
 
 <script setup>

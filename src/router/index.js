@@ -19,6 +19,8 @@ import NotFound from '@/pages/frontend/404.vue'
 import AdminWikiList from '@/pages/admin/wiki-list.vue'
 import WikiList from '@/pages/frontend/wiki-list.vue'
 import WikiDetail from '@/pages/frontend/wiki-detail.vue'
+import AdminCategoryArticleList from '@/pages/admin/category-article-list.vue'
+
 
 // 统一在这里声明所有路由
 const routes = [
@@ -67,7 +69,7 @@ const routes = [
                 path: "/admin/category/list",
                 component: AdminCategoryList,
                 meta: {
-                    title: '分类管理'
+                    title: '分类列表'
                 }
             },
             {
@@ -98,6 +100,14 @@ const routes = [
                     title: '知识库管理'
                 }
             },
+            {
+                path: "/admin/article/getArticlesByCategory",
+                component: AdminCategoryArticleList,
+                meta: {
+                    title: '分类列表'
+                }
+            },
+
 
 
         ]
